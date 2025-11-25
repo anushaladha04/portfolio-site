@@ -1,4 +1,3 @@
-import React from 'react'
 import { useState, useRef } from 'react';
 import emailjs from '@emailjs/browser';
 
@@ -10,6 +9,7 @@ const Contact = () => {
   const handleChange = (e) => {
     setForm({ ...form, [e.target.name]: e.target.value });
   };
+  
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsLoading(true);
@@ -29,6 +29,8 @@ const Contact = () => {
       setIsLoading(false);
       // TODO: Show success message
       // TODO: Hide an alert
+
+      setForm({name: '', email: '', message: ''});
     }).catch((error) => {
       setIsLoading(false);
       console.log(error);
@@ -60,6 +62,7 @@ const Contact = () => {
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
+              autoComplete="name"
             />
           </label>
           <label className="text-black-500 font-semibold">
@@ -74,6 +77,7 @@ const Contact = () => {
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
+              autoComplete="email"
             />
           </label>
           <label className="text-black-500 font-semibold">
@@ -88,6 +92,7 @@ const Contact = () => {
               onChange={handleChange}
               onFocus={handleFocus}
               onBlur={handleBlur}
+              autoComplete="off"
             />
           </label>
           <button
