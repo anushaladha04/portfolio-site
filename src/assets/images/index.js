@@ -1,15 +1,13 @@
 import hero from './hero.jpg'
-import meta from './meta.png'
-import shopify from './shopify.png'
-import starbucks from './starbucks.png'
-import tesla from './tesla.png'
-import logo from './logo.svg'
+import nova from './nova.png'
+import waterkeeper from './waterkeeper.png'
+import clothesline from './clothesline.png'
+import cc from './cc.png'
 
 export {
     hero,
-    meta,
-    shopify,
-    starbucks,
-    tesla,
-    logo
+    nova,
+    waterkeeper,
+    clothesline,
+    cc
 }
