@@ -1,7 +1,7 @@
 # Anusha Ladha’s Portfolio
 ## Introduction
 
-Hi! I’m Anusha Ladha, a second-year Computer Science & Engineering student at UCLA. This repository contains the code for my interactive 3D portfolio website. The site is designed as a floating island with three simple sections: About, Projects, and Contact.
+Hi! I’m Anusha Ladha, a second-year Computer Science student at UCLA. This repository contains the code for my interactive 3D portfolio website. The site is designed as a floating island with three simple sections: About, Projects, and Contact.
 
 ## About This Project
 
