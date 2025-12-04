@@ -5,7 +5,7 @@ Hi! I’m Anusha Ladha, a second-year Computer Science student at UCLA. This rep
 
 ## About This Project
 
-I built this portfolio to create a more personal and immersive way to share my work. Instead of a standard static layout, the island provides a calm, visual environment that reflects my design style and personality.
+I built this portfolio to create a more personal and immersive way to share my work. Instead of a standard static layout, the island is a little more fun and interactive! Hope you enjoy exploring it.
 
 ## Contact
 
