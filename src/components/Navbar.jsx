@@ -1,27 +1,28 @@
-import { NavLink } from "react-router-dom"
+import { NavLink, useLocation } from "react-router-dom"
 import { github, linkedin } from "../assets/icons"
 
 const Navbar = () => {
+  const { pathname } = useLocation()
+  const isLightPage = pathname === '/about' || pathname === '/projects' || pathname === '/contact'
+
+  const linkClass = ({ isActive }) => {
+    const base = 'transition-colors duration-200'
+    if (isLightPage) {
+      return `${base} ${isActive ? 'text-blue-600' : 'text-slate-800 hover:text-blue-600'}`
+    }
+    return `${base} ${isActive ? 'text-blue-300' : 'text-white hover:text-blue-200'}`
+  }
+
   return (
-    <header className="header">
+    <header className={`header ${isLightPage ? 'bg-white/95' : ''}`}>
         <NavLink to="/" className="w-10 h-10 rounded-lg bg-white items-center justify-center flex font-bold shadow-md">
             <p className="blue-gradient_text">AL</p>
         </NavLink>
         <nav className="flex text-lg gap-7 font-medium items-center">
-            <NavLink
-              to="/about"
-              className={({ isActive }) =>
-                `transition-colors duration-200 ${isActive ? 'text-blue-300' : 'text-white hover:text-blue-200'}`
-              }
-            >
+            <NavLink to="/about" className={linkClass}>
               About
             </NavLink>
-            <NavLink
-              to="/projects"
-              className={({ isActive }) =>
-                `transition-colors duration-200 ${isActive ? 'text-blue-300' : 'text-white hover:text-blue-200'}`
-              }
-            >
+            <NavLink to="/projects" className={linkClass}>
               Projects
             </NavLink>
             <div className="flex gap-3 items-center">
