@@ -14,4 +14,4 @@ The site includes an optional chatbot that answers questions about Anusha using 
 ## Contact
 
 If you'd like to connect or collaborate, feel free to reach out:
-anushaladha4@g.ucla.edu
+anushaladha4 [at] ucla [dot] edu
