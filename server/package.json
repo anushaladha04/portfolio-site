@@ -1,0 +1,14 @@
+{
+  "name": "portfoliosite-server",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "embed": "node scripts/embed-knowledge.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.21.0",
+    "openai": "^4.73.0"
+  }
+}
