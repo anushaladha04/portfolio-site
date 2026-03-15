@@ -47,16 +47,26 @@ export default function ChatBot() {
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() => setOpen((o) => !o)}
-        className="fixed bottom-6 right-6 w-14 h-14 rounded-full bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center z-50"
-        aria-label="Open AnushaGPT"
-      >
-        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-        </svg>
-      </button>
+      <div className="group fixed bottom-6 right-6 z-50 flex items-center">
+        {!open && (
+          <span
+            className="pointer-events-none absolute right-full mr-2 whitespace-nowrap rounded-md bg-slate-800 px-2.5 py-1.5 text-sm font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100"
+            aria-hidden
+          >
+            AnushaGPT
+          </span>
+        )}
+        <button
+          type="button"
+          onClick={() => setOpen((o) => !o)}
+          className="w-14 h-14 rounded-full bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center"
+          aria-label="Open AnushaGPT"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+          </svg>
+        </button>
+      </div>
 
       {open && (
         <div className="fixed bottom-24 right-6 w-[380px] max-w-[calc(100vw-3rem)] h-[480px] bg-white rounded-xl shadow-xl border border-slate-200 flex flex-col z-50">

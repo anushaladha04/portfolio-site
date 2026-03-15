@@ -9,8 +9,6 @@ import Bird from '../models/Bird'
 import Plane from '../models/Plane'
 
 import ceilings from '../assets/ceilings.mp3'
-import soundon from '../assets/icons/soundon.png'
-import soundoff from '../assets/icons/soundoff.png'
 
 const Home = () => {
   const audioRef = useRef(new Audio(ceilings));
@@ -96,13 +94,29 @@ const Home = () => {
           </Suspense>
       </Canvas>
 
-      <div className="absolute bottom-2 left-2">
-        <img
-          src={!isPlayingMusic ? soundoff : soundon}
-          alt="sound"
-          className="w-10 h-10 cursor-pointer object-contain"
+      <div className="group absolute bottom-6 left-6 z-10 flex items-center">
+        <span
+          className="pointer-events-none absolute left-full ml-2 whitespace-nowrap rounded-md bg-slate-800 px-2.5 py-1.5 text-sm font-medium text-white opacity-0 shadow-lg transition-opacity duration-200 group-hover:opacity-100"
+          aria-hidden
+        >
+          AnushaTunes
+        </span>
+        <button
+          type="button"
           onClick={() => setisPlayingMusic(!isPlayingMusic)}
-        />
+          className="w-14 h-14 rounded-full bg-gradient-to-r from-[#00c6ff] to-[#0072ff] text-white shadow-lg hover:opacity-90 transition-opacity flex items-center justify-center"
+          aria-label={isPlayingMusic ? 'Pause music' : 'Play music'}
+        >
+          {isPlayingMusic ? (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19h-6V5h6v14zM9 19V5H6v14h3z" />
+            </svg>
+          ) : (
+            <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 19V6l12-3v13M9 19c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zm12-3c0 1.105-1.343 2-3 2s-3-.895-3-2 1.343-2 3-2 3 .895 3 2zM9 10l12-3" />
+            </svg>
+          )}
+        </button>
       </div>
     </section>
   )
