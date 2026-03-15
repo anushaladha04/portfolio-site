@@ -8,11 +8,21 @@ const Navbar = () => {
             <p className="blue-gradient_text">AL</p>
         </NavLink>
         <nav className="flex text-lg gap-7 font-medium items-center">
-            <NavLink to="/about" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}>
-                About
+            <NavLink
+              to="/about"
+              className={({ isActive }) =>
+                `transition-colors duration-200 ${isActive ? 'text-blue-300' : 'text-white hover:text-blue-200'}`
+              }
+            >
+              About
             </NavLink>
-            <NavLink to="/projects" className={({ isActive }) => isActive ? 'text-blue-500' : 'text-black'}>
-                Projects
+            <NavLink
+              to="/projects"
+              className={({ isActive }) =>
+                `transition-colors duration-200 ${isActive ? 'text-blue-300' : 'text-white hover:text-blue-200'}`
+              }
+            >
+              Projects
             </NavLink>
             <div className="flex gap-3 items-center">
               <a
